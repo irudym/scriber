@@ -1,0 +1,47 @@
+body {
+  background-color: #FFFFFF;
+  margin: 0px; }
+
+.topbar {
+  height: 64px;
+  padding: 5px;
+  background-color: #4B946A; }
+
+.panel-main {
+  background-color: #FFFFFF;
+  padding: 5px;
+  transition: margin-left .5s; }
+
+.panel-left {
+  position: fixed;
+  overflow: hidden;
+  top: 64px;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #333333;
+  transition: 0.5s; }
+
+.panel-left-toggle {
+  position: absolute;
+  top: 12px;
+  left: 16px; }
+  .panel-left-toggle button {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: transparent;
+    background: none;
+    color: inherit;
+    width: 48px;
+    height: 48px;
+    padding: 0; }
+  .panel-left-toggle .icon-bar {
+    margin-top: .375em;
+    margin-bottom: .375em;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 2em;
+    height: 0.125em;
+    background-color: #333333; }
