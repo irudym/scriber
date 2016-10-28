@@ -2,15 +2,42 @@ body {
   background-color: #FFFFFF;
   margin: 0px; }
 
+body, html {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     not supported by any browser */
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 0; }
+
+a {
+  color: #0A4125;
+  text-decoration: none; }
+
 .topbar {
   height: 64px;
-  padding: 5px;
-  background-color: #4B946A; }
+  background-color: #176A39;
+  width: 100%;
+  top: 0px;
+  position: fixed; }
 
 .panel-main {
   background-color: #FFFFFF;
   padding: 5px;
-  transition: margin-left .5s; }
+  transition: margin-left .5s;
+  width: 100%;
+  top: 64px;
+  position: inherit;
+  overflow-y: auto; }
 
 .panel-left {
   position: fixed;
@@ -19,8 +46,28 @@ body {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #333333;
-  transition: 0.5s; }
+  background-color: #232833;
+  transition: 0.5s;
+  z-index: 1000; }
+
+.menu-section {
+  margin: 25px 0; }
+
+.menu-section-list {
+  padding: 0;
+  margin: 10px 0;
+  list-style: none; }
+  .menu-section-list li {
+    display: list-item;
+    text-align: -webkit-match-parent; }
+    .menu-section-list li a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #FFFFFF; }
+    .menu-section-list li a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none; }
 
 .panel-left-toggle {
   position: absolute;

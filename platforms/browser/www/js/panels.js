@@ -5,7 +5,6 @@
  */
 
 
-
 function Panel(panel_name, panel_width, html_object) {
 
   this.initialize = function(panel_name, panel_width, html_object) {
@@ -31,4 +30,13 @@ function Panel(panel_name, panel_width, html_object) {
       this.object.css("transition", trans + "s");
   };
   this.initialize(panel_name, panel_width, html_object);
+}
+
+
+function PanelsManager() {
+    this.panels = [];
+
+    this.add_panel = function(panel,margin) {
+        this.panels.push({panel: panel, margin: margin});
+    }
 }

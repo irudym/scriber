@@ -1,31 +1,88 @@
-
+$primary-color: #176A39;
+$menu-color: #232833;
+$link-color: #0A4125;
+$topbar-height: 64px;
 
 body {
   background-color: #FFFFFF;
   margin: 0px;
 }
 
+body, html {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+  height: 100%;
+  width: 100%;
+  //-webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  margin: 0 0;
+  //position: fixed;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
 .topbar {
-  height: 64px;
-  padding: 5px;
-  background-color: #4B946A;
+  height: $topbar-height;
+  background-color: $primary-color;
+  width:100%;
+  top: 0px;
+  position: fixed;
 }
 
 .panel-main {
   background-color: #FFFFFF;
   padding: 5px;
   transition: margin-left .5s;
+  width: 100%;
+  top: $topbar-height;
+  position: inherit;
+  overflow-y: auto;
 }
 
 .panel-left {
   position: fixed;
   overflow: hidden;
-  top: 64px;
+  top: $topbar-height;
   left:0;
   width: 0;
   height: 100%;
-  background-color: #333333;
+  background-color: $menu-color;
   transition: 0.5s;
+  z-index: 1000;
+}
+
+.menu-section {
+  margin: 25px 0;
+}
+
+.menu-section-list {
+  padding: 0;
+  margin: 10px 0;
+  list-style: none;
+
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+
+    a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+  }
 }
 
 .panel-left-toggle {
@@ -56,3 +113,4 @@ body {
     background-color: #333333;
   }
 }
+
