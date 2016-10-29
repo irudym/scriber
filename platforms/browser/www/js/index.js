@@ -19,6 +19,7 @@
 
 var start_touch_x = 0;
 var start_touch_y = 0;
+var panel_width = 0;
 
 function main()
 {
@@ -34,7 +35,7 @@ function main()
 
     $(".panel-left-toggle").click(function(e) {
         console.log("Button click");
-        var size = 254;
+        var size = menu_panel.get_panel_width();
         if(menu_panel.get_width()>0) size = 0;
         menu_panel.set_width(size);
         main_panel.set_left_margin(size);
@@ -44,6 +45,7 @@ function main()
         var e = ev.originalEvent;
         start_touch_x = e.touches[0].screenX;
         start_touch_y = e.touches[0].screenY;
+        panel_width = menu_panel.get_width();
 
         //set panel transitions to 0 seconds to avoid inertia
         menu_panel.set_transition(0);
@@ -55,8 +57,9 @@ function main()
 
         //slide left panel
         if($(".panel-left").width()>0) {
-            new_width = 254 - (start_touch_x - e.touches[0].screenX);
-            if(new_width > 254) new_width = 254;
+            new_width = panel_width - (start_touch_x - e.touches[0].screenX);
+            if(new_width > menu_panel.get_panel_width()) new_width = menu_panel.get_panel_width();
+            if(new_width < 0)  new_width = 0;
 
             menu_panel.set_width(new_width);
             main_panel.set_left_margin(new_width);
@@ -68,11 +71,11 @@ function main()
     $(window).on("touchend", function(ev) {
         var e = ev.originalEvent;
         width = $(".panel-left").width();
-        if(width >100) width = 254; else width = 0;
+        if(width >menu_panel.get_panel_width()/2) width = menu_panel.get_panel_width(); else width = 0;
 
         //set panel transitions to 0 seconds to avoid inertia
-        menu_panel.set_transition(0.5);
-        main_panel.set_transition(0.5);
+        menu_panel.set_transition(0.4);
+        main_panel.set_transition(0.4);
 
         menu_panel.set_width(width);
         main_panel.set_left_margin(width);

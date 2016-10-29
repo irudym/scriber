@@ -22,6 +22,10 @@ function Panel(panel_name, panel_width, html_object) {
       return this.object.width();
   };
 
+  this.get_panel_width = function() {
+        return this.width;
+    }
+
   this.set_left_margin = function(margin) {
       this.object.css("margin-left", margin + "px");
   };
